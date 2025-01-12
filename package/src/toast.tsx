@@ -263,8 +263,7 @@ export const Toaster = ({
               defaultCloseButton
             }
             variant={
-              defaultVariant ??
-              (toast.type !== 'jsx' ? toast.variant : 'gentle')
+              toast.type !== 'jsx' ? toast.variant ?? defaultVariant : 'gentle'
             }
             color={
               toast.type === 'default'

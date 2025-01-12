@@ -1,19 +1,20 @@
 {
   "name": "anni",
-  "version": "1.1.13",
+  "version": "1.1.16",
   "description": "A simple easy-to-use notification system for React with Tailwind CSS.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "source": "./src/index.ts",
   "exports": {
-    "./dist/styles.css": "./dist/styles.css"
+    ".": "./dist/index.js"
   },
   "scripts": {
     "build": "tsc && copy src\\styles.css dist\\"
   },
   "files": [
     "dist",
-    "dist/styles.css"
+    "dist/index.d.ts",
+    "dist/index.js"
   ],
   "keywords": [
     "notifications",

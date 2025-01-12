@@ -2,5 +2,6 @@ node_modules/
 src/
 tsconfig.json
 pnpm-lock.yaml
+bun.lockb
 .git/
 .npmignore
