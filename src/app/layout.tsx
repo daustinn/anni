@@ -7,6 +7,15 @@ export const metadata: Metadata = {
   title:
     'Anni - Simple and easy-to-use notification system for React with Tailwind CSS.',
   description:
+    'Simple easy-to-use notification system for React with Tailwind CSS.',
+  icons: 'favicon.svg',
+  keywords: 'React, Tailwind CSS, Notification, Toast, Anni',
+  authors: {
+    name: 'Daustinn',
+    url: 'https://daustinn.com'
+  },
+  category: 'UI Components',
+  abstract:
     'Simple easy-to-use notification system for React with Tailwind CSS.'
 }
 
@@ -17,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased min-h-svh bg-[#161616] text-white`}>
+      <body className={`antialiased min-h-svh bg-[#151ec1] text-white`}>
         <Toaster />
         {children}
       </body>
