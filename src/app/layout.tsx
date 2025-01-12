@@ -2,6 +2,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Toaster } from 'anni'
+import { GeistSans } from 'geist/font/sans'
+import { GeistMono } from 'geist/font/mono'
 
 export const metadata: Metadata = {
   title:
@@ -26,7 +28,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`antialiased min-h-svh bg-[#151ec1] text-white`}>
+      <body
+        className={`antialiased min-h-svh bg-[#151ec1] text-white ${GeistSans.className} ${GeistMono.className}`}
+      >
         <Toaster />
         {children}
       </body>
