@@ -12,7 +12,7 @@
     "@midudev/tailwind-animations": "^0.1.0",
     "@nanui/utils": "^1.0.35",
     "@radix-ui/react-toast": "^1.2.4",
-    "anni": "^1.1.13",
+    "anni": "^1.1.16",
     "motion": "^11.16.4",
     "next": "15.1.4",
     "prism-react-renderer": "^2.4.1",
