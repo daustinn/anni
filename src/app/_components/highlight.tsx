@@ -47,7 +47,7 @@ export default function Highlight({
         {({ tokens, getLineProps, getTokenProps, className, style }) => (
           <pre
             className={cn(
-              'rounded-xl border shadow-black/50 shadow-md border-stone-500/10 text-sm p-3 px-3',
+              'rounded-xl border shadow-black/20 shadow-md border-stone-500/10 text-sm p-3 px-3',
               className
             )}
             style={style}
