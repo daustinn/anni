@@ -30,12 +30,12 @@ export default {
   //...
 } satisfies Config`
 
-export default function Docs() {
+export default function Examples() {
   return (
-    <section className="py-10 space-y-16 px-10 min-h-svh" id="get-started">
-      <article className="max-w-2xl mx-auto">
-        <h2 className="font-semibold text-xl tracking-tight">Installation</h2>
-        <p className="dark:text-stone-300/60">
+    <section className="space-y-4 p-7 overflow-y-auto">
+      <article>
+        <h2 className="font-bold text-base tracking-tight">Installation</h2>
+        <p className="dark:text-stone-black text-sm">
           Use npm, pnpm, or bun to install Anni in your project.
         </p>
         <div className="pt-5 space-y-2">
@@ -44,11 +44,11 @@ export default function Docs() {
           </Highlight>
         </div>
       </article>
-      <article className="max-w-2xl mx-auto">
-        <h2 className="font-semibold text-xl tracking-tight">
+      <article>
+        <h2 className="font-bold text-base tracking-tight">
           Tailwind CSS configuration
         </h2>
-        <p className="dark:text-stone-300/60">
+        <p className="dark:text-stone-black text-sm">
           To include Anni in your Tailwind CSS build, add the following to your
           tailwind.config.js file.
         </p>
@@ -58,9 +58,9 @@ export default function Docs() {
           </Highlight>
         </div>
       </article>
-      <article className="max-w-2xl mx-auto">
-        <h2 className="font-semibold text-xl tracking-tight">Usage</h2>
-        <p className="dark:text-stone-300/60">
+      <article>
+        <h2 className="font-bold text-base tracking-tight">Usage</h2>
+        <p className="dark:text-stone-black text-sm">
           Use the toast function to render a toast notification.
         </p>
         <div className="pt-5">

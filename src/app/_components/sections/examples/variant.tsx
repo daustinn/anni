@@ -41,9 +41,9 @@ export default function Variants() {
   }
 
   return (
-    <article className="max-w-2xl mx-auto">
-      <h2 className="font-semibold text-xl tracking-tight">Variant</h2>
-      <p className="dark:text-stone-300/60">
+    <article>
+      <h2 className="font-bold text-base tracking-tight">Variant</h2>
+      <p className="dark:text-stone-black text-sm">
         The <code>variant</code> prop is used to change the appearance of the
         toast.
       </p>
@@ -53,7 +53,7 @@ export default function Variants() {
             <button
               onClick={() => handleTypeChange(key as keyof typeof currentList)}
               key={key}
-              className="capitalize shadow-md shadow-black/30 bg-stone-500/10 hover:scale-105 active:scale-95 transition-transform p-2 font-medium text-sm px-3 rounded-xl border border-stone-500/50"
+              className="capitalize text-sm bg-black text-lime-50 hover:scale-105 active:scale-95 transition-transform p-2 font-medium px-3 rounded-xl"
             >
               {key}
             </button>

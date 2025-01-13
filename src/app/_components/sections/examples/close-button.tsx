@@ -6,11 +6,9 @@ import { toast } from 'anni'
 
 export default function CloseButton() {
   return (
-    <article className="max-w-2xl mx-auto">
-      <h2 className="font-semibold text-xl tracking-tight">
-        With close button
-      </h2>
-      <p className="dark:text-stone-300/60">
+    <article>
+      <h2 className="font-bold text-base tracking-tight">With close button</h2>
+      <p className="dark:text-stone-black text-sm">
         You can add a close button to the toast by setting the{' '}
         <code>closeButton</code> option to <code>true</code>.
       </p>
@@ -22,7 +20,7 @@ export default function CloseButton() {
                 closeButton: true
               })
             }
-            className="capitalize shadow-md shadow-black/30 bg-stone-500/10 hover:scale-105 active:scale-95 transition-transform p-2 font-medium text-sm px-3 rounded-xl border border-stone-500/50"
+            className="capitalize text-sm bg-black text-lime-50 hover:scale-105 active:scale-95 transition-transform p-2 font-medium px-3 rounded-xl"
           >
             With close button
           </button>
