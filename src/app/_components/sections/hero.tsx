@@ -3,7 +3,7 @@ import RenderToast from '../render-toast'
 import { cn } from '@nanui/utils'
 import { NextFont } from 'next/dist/compiled/@next/font'
 import { toast } from 'anni'
-import { Copy, DownArrowOdulated } from '@/icons'
+import { Copy, DownArrowOdulated, Github } from '@/icons'
 import { UiContext } from '@/providers/ui'
 
 export default function Hero({
@@ -23,7 +23,7 @@ export default function Hero({
     <header
       data-inaside={ctxui.openExamples ? '' : undefined}
       className={cn(
-        'min-h-svh grid flex-grow xl:w-max data-[inaside]:flex-none transition-[width] max-md:py-10 data-[inaside]:w-[60vw] max-xl:data-[inaside]:w-svw place-content-center relative inset-x-0 z-0',
+        'min-h-svh grid flex-grow xl:w-max data-[inaside]:flex-none transition-all max-md:py-10 data-[inaside]:w-[60vw] max-xl:data-[inaside]:w-svw place-content-center relative inset-x-0 z-0',
         fredoka.className
       )}
     >
@@ -83,6 +83,16 @@ export default function Hero({
         >
           <DownArrowOdulated size={110} className="-rotate-90" />
         </button>
+      </div>
+      <div className="absolute top-0 right-0 pointer-events-none p-8">
+        <a
+          href="https://github.com/daustinn/anni"
+          target="_blank"
+          rel="noreferrer"
+          className="block hover:scale-110 active:scale-95 pointer-events-auto transition-transform"
+        >
+          <Github size={25} />
+        </a>
       </div>
     </header>
   )
