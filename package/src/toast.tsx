@@ -470,7 +470,7 @@ const toastVariants = cva(
   {
     variants: {
       color: {
-        lime: 'bg-lime-100 text-black', //
+        lime: 'bg-lime-100 text-black',
         red: 'bg-red-100 text-black',
         cyan: 'bg-cyan-100 text-black',
         yellow: 'bg-yellow-100 text-black'
