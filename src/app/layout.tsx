@@ -3,6 +3,13 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Toaster } from 'anni'
 import { GeistSans } from 'geist/font/sans'
+import { Fredoka } from 'next/font/google'
+import UiProvider from '@/providers/ui'
+
+const fredoka = Fredoka({
+  subsets: ['latin'],
+  weight: ['300', '300', '400', '500', '600', '700']
+})
 
 export const metadata: Metadata = {
   title:
@@ -28,10 +35,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`antialiased min-h-svh bg-[#151ec1] text-white ${GeistSans.className}`}
+        className={`antialiased selection:bg-lime-400 selection:text-black min-h-svh bg-[#151ec1] text-white ${GeistSans.className}`}
       >
-        <Toaster />
-        {children}
+        <UiProvider>
+          <Toaster
+            defaultClassNames={{
+              container: fredoka.className
+            }}
+          />
+          {children}
+        </UiProvider>
       </body>
     </html>
   )

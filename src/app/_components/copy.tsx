@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { toast } from 'anni'
-import { Copy } from '@/icons/indext'
+import { Copy } from '@/icons'
 
 export default function CopyButton({ codeBlock }: { codeBlock: string }) {
   const handleCopy = () => {

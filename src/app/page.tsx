@@ -1,9 +1,10 @@
+'use client'
+
 import React from 'react'
 import Hero from './_components/sections/hero'
-import Footer from './_components/footer'
-import Docs from './_components/sections/docs'
 import { Sarina, Fredoka } from 'next/font/google'
-import { DownArrowOdulated } from '@/icons/indext'
+import Sections from './_components/sections'
+import { UiContext } from '@/providers/ui'
 
 const sarina = Sarina({
   subsets: ['latin'],
@@ -16,19 +17,14 @@ const fredoka = Fredoka({
 })
 
 export default function Home() {
+  const ctxui = React.useContext(UiContext)
   return (
-    <main className="w-full flex flex-col mx-auto">
+    <main
+      data-horizontal={ctxui.openExamples ? '' : undefined}
+      className="w-full flex max-md:flex-col mx-auto"
+    >
       <Hero fredoka={fredoka} sarina={sarina} />
-      <div className="h-svh hidden md:block"></div>
-      <div className="flex relative flex-col py-5 bg-[#161616] rounded-t-3xl z-[1]">
-        <footer className="hidden absolute md:flex text-blue-100 top-[-200px] inset-x-0 p-10 px-0 pointer-events-none justify-end">
-          <a href="#get-started" className="pointer-events-auto text-lg">
-            <DownArrowOdulated size={110} />
-          </a>
-        </footer>
-        <Docs />
-        <Footer />
-      </div>
+      <Sections />
     </main>
   )
 }
