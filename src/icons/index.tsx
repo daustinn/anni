@@ -88,3 +88,33 @@ export const DaustinnSignature = React.forwardRef<SVGSVGElement, IconProps>(
   }
 )
 DaustinnSignature.displayName = 'DaustinnSignatureIcon'
+
+export const CloseSidebar = React.forwardRef<SVGSVGElement, IconProps>(
+  ({ size = 20, ...props }, forwardRef) => {
+    return (
+      <svg
+        {...props}
+        ref={forwardRef}
+        width={size}
+        height={size}
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M42.008 48H6.01905C2.71005 48 0.0240479 45.314 0.0240479 42.005V5.99402C0.0240479 2.68602 2.71005 -0.000976562 6.01905 -0.000976562H42.008C45.317 -0.000976562 48.003 2.68602 48.003 5.99402V42.005C48.003 45.314 45.317 48 42.008 48ZM16.024 43.999V4.00002H7.01205C5.36205 4.00002 4.02305 5.33902 4.02305 6.98902V41.01C4.02305 42.66 5.36205 43.999 7.01205 43.999H16.024ZM41.015 4.00002H20.024V43.999H41.015C42.665 43.999 44.0041 42.66 44.0041 41.01V6.98902C44.0041 5.33902 42.665 4.00002 41.015 4.00002Z"
+          fill="currentColor"
+        />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M8.02407 30.774L14.8521 23.946L8.02407 17.117L5.19507 19.946L9.19507 23.946L5.19507 27.946L8.02407 30.774Z"
+          fill="currentColor"
+        />
+      </svg>
+    )
+  }
+)
+CloseSidebar.displayName = 'CloseSidebarIcon'
