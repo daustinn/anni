@@ -24,7 +24,29 @@ export const metadata: Metadata = {
   },
   category: 'UI Components',
   abstract:
-    'Simple easy-to-use notification system for React with Tailwind CSS.'
+    'Simple easy-to-use notification system for React with Tailwind CSS.',
+  openGraph: {
+    type: 'website',
+    title: 'Anni',
+    description:
+      'Simple easy-to-use notification system for React with Tailwind CSS.',
+    images: {
+      hash: 'og-image-home',
+      host: 'https://anni.daustinn.com',
+      pathname: '/favicon.webp',
+      hostname: 'anni.daustinn.com',
+      href: 'https://anni.daustinn.com/favicon.svg',
+      origin: 'https://anni.daustinn.com',
+      protocol: 'https',
+      searchParams: new URLSearchParams(),
+      url: 'https://anni.daustinn.com/favicon.svg',
+      alt: 'Anni',
+      height: 630,
+      secureUrl: 'https://anni.daustinn.com/favicon.svg',
+      type: 'image/svg',
+      width: 630
+    }
+  }
 }
 
 export default function RootLayout({
