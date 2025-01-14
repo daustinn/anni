@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![image](https://github.com/user-attachments/assets/c1d6a790-719d-46c9-85d5-97f88b158bfb)
 
-## Getting Started
-
-First, run the development server:
+## Installation
+Use npm, pnpm, or bun to install Anni in your project:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install anni
+```
+```bash
+pnpm add anni
+```
+```bash
+bun add anni
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Tailwind CSS configuration
+To include Anni in your Tailwind CSS build, add the following to your `tailwind.config.js` file.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```tsx
+import type { Config } from 'tailwindcss'
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+export default {
+  //... 
+  content: [
+    //...
+    './node_modules/anni/dist/**/*.{js,ts,jsx,tsx,mdx}'
+  ],
+  //...
+} satisfies Config
+```
 
-## Learn More
+## Usage
+Use the toast function to render a toast notification.
 
-To learn more about Next.js, take a look at the following resources:
+#### Add `<Toaster />` to your app.
+```tsx
+import { Toaster } from 'anni'
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+export default function RootLayout({
+  children
+}) {
+  return (
+    <html>
+      <body>
+        <Toaster />
+        {children}
+      </body>
+    </html>
+  )
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### Use `toast` function.
 
-## Deploy on Vercel
+```tsx
+import { toast } from 'anni'
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+export default function App() {
+  return (
+    <main>
+      <button onClick={() => toast('Success Toast 🚀')}>
+        Render a toast
+      </button>
+    </main>
+  )
+}
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Examples
+View [examples](https://anni.daustinn.com).
