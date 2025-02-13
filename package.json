@@ -1,0 +1,48 @@
+{
+  "name": "anni",
+  "version": "1.1.17",
+  "description": "A simple easy-to-use notification system for React with Tailwind CSS.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "source": "./src/index.ts",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc && copy src\\styles.css dist\\"
+  },
+  "files": [
+    "dist",
+    "dist/index.d.ts",
+    "dist/index.js"
+  ],
+  "keywords": [
+    "notifications",
+    "react",
+    "ui",
+    "component",
+    "tailwindcss"
+  ],
+  "author": "David Bendezú <hi@daustinn.com>",
+  "license": "MIT",
+  "homepage": "https://anni.daustinn.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daustinn/anni.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daustinn/anni/issues"
+  },
+  "type": "module",
+  "dependencies": {
+    "@nanui/utils": "^1.0.35",
+    "@radix-ui/react-toast": "^1.2.4"
+  },
+  "devDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "@types/react": "^17.0.3",
+    "@types/react-dom": "^17.0.3",
+    "typescript": "^4.3.5"
+  }
+}

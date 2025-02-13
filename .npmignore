@@ -1,0 +1,9 @@
+node_modules/
+website/
+src/
+tsconfig.json
+pnpm-lock.yaml
+bun.lockb
+.git/
+.npmignore
+
