@@ -1,7 +1,7 @@
 {
   "name": "anni",
-  "version": "1.1.17",
-  "description": "A simple easy-to-use notification system for React with Tailwind CSS.",
+  "version": "1.1.18",
+  "description": "A simple easy-to-use notification system for React",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "source": "./src/index.ts",
@@ -9,7 +9,7 @@
     ".": "./dist/index.js"
   },
   "scripts": {
-    "build": "tsc && copy src\\styles.css dist\\"
+    "build": "tsc && esbuild dist/**/*.js --minify --outdir=dist --allow-overwrite && copy src\\styles.css dist\\"
   },
   "files": [
     "dist",
@@ -21,7 +21,9 @@
     "react",
     "ui",
     "component",
-    "tailwindcss"
+    "css",
+    "toast",
+    "nextjs"
   ],
   "author": "David Bendezú <hi@daustinn.com>",
   "license": "MIT",
@@ -35,14 +37,13 @@
   },
   "type": "module",
   "dependencies": {
-    "@nanui/utils": "^1.0.35",
     "@radix-ui/react-toast": "^1.2.4"
   },
   "devDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "typescript": "^4.3.5"
   }
 }

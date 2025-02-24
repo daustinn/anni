@@ -8,13 +8,13 @@
     "noImplicitAny": false,
     "skipLibCheck": true,
     "module": "esnext",
-    "sourceMap": true,
     "outDir": "dist",
     "declaration": true,
     "declarationDir": "./dist",
     "target": "es5",
     "baseUrl": ".",
     "jsx": "react",
-    "paths": {}
+    "paths": {},
+    "lib": ["dom", "es2015", "es2016", "es2017", "esnext"]
   }
 }
