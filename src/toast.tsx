@@ -165,6 +165,7 @@ export const Toaster = (props: ToasterProps) => {
             pointerEvents: 'none',
             justifyContent: positions ? positions.justify : undefined
           }}
+          data-anni-container
           data-anni-theme={theme}
           data-anni-appearance={appearance}
         >
