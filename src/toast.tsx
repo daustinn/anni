@@ -33,6 +33,11 @@ interface ToasterProps {
     toast?: string
   }
 
+  defaultStyles?: {
+    container?: React.CSSProperties
+    toast?: React.CSSProperties
+  }
+
   defaultTimeDuration?: number
   position?: ToastPosition
 
@@ -76,7 +81,8 @@ export const Toaster = (props: ToasterProps) => {
     defaultIcons = DEFAULT_ICONS,
     theme = 'dark',
     appearance = 'brand',
-    gap = 15
+    gap = 15,
+    defaultStyles = {}
   } = props
   const [toasts, setToasts] = React.useState<Toast[]>(ToastInstance.toasts)
 
@@ -146,7 +152,8 @@ export const Toaster = (props: ToasterProps) => {
         distroy,
         defaultIcons,
         appearance,
-        gap
+        gap,
+        defaultStyles
       }}
     >
       <ToastPrimitives.ToastProvider
@@ -163,7 +170,8 @@ export const Toaster = (props: ToasterProps) => {
             top: positions ? positions.top : undefined,
             display: 'flex',
             pointerEvents: 'none',
-            justifyContent: positions ? positions.justify : undefined
+            justifyContent: positions ? positions.justify : undefined,
+            ...defaultStyles.container
           }}
           data-anni-container
           data-anni-theme={theme}
@@ -204,7 +212,9 @@ export const ToastComponent = (
     defaultActionAltText,
     defaultActionChild,
     defaultCloseButtonProps,
-    defaultIcons
+    defaultIcons,
+    defaultStyles,
+    defaultClassNames
   } = React.useContext(ContextToaster)
 
   const duration = toast.duration ?? defaultTimeDuration
@@ -248,9 +258,13 @@ export const ToastComponent = (
           width: '100%',
           pointerEvents: 'auto',
           alignItems: 'center',
-          gap: '0.75rem'
+          gap: '0.75rem',
+          ...defaultStyles.toast,
+          ...toast.style
         }}
-        className={toast.className}
+        className={
+          `${defaultClassNames.toast} ${toast.className}`.trim() || undefined
+        }
       >
         {childIsJsx ? (
           children
