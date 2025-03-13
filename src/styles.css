@@ -175,7 +175,7 @@
 }
 
 [data-anni-container] {
-  z-index: 9999;
+  z-index: 9999999999;
 }
 
 [data-anni-theme='light'][data-anni-appearance='brand'],
