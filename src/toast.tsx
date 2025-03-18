@@ -232,7 +232,7 @@ export const ToastComponent = (
       ? toast.child({ dismiss: () => distroy(toast.id) })
       : toast.child
 
-  const childIsJsx = React.isValidElement(children)
+  const childIsJsx = React.isValidElement(children) && toast.type === 'default'
 
   const Icon = React.useMemo(() => {
     return toast.icon
