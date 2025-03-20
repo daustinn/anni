@@ -18,7 +18,7 @@ type ToastPosition =
 
 const DURATION_TOAST = 5000
 
-interface ToasterProps {
+export interface ToasterProps {
   unstyled?: boolean
 
   defaultActionProps?: React.ButtonHTMLAttributes<HTMLButtonElement>
