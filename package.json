@@ -1,7 +1,7 @@
 {
   "name": "anni",
-  "version": "1.1.24",
-  "description": "A simple easy-to-use notification system for React",
+  "version": "1.1.25",
+  "description": "Simple, beautiful, and easy-to-use notification system",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "source": "./src/index.ts",
@@ -9,7 +9,7 @@
     ".": "./dist/index.js"
   },
   "scripts": {
-    "build": "tsc && esbuild dist/**/*.js --minify --outdir=dist --allow-overwrite && copy src\\styles.css dist\\"
+    "build": "tsup src/index.ts --format esm,cjs --dts --minify"
   },
   "files": [
     "dist",
@@ -36,14 +36,20 @@
     "url": "https://github.com/daustinn/anni/issues"
   },
   "type": "module",
+  "peerDependencies": {
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
+  },
   "dependencies": {
     "@radix-ui/react-toast": "^1.2.4"
   },
   "devDependencies": {
+    "@swc/core": "^1.11.12",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
+    "tsup": "^8.4.0",
     "typescript": "^4.3.5"
   }
 }
