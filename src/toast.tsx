@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react/prop-types */
 'use client'
 
 import './styles.css'
@@ -225,7 +223,7 @@ export const ToastComponent = (
     heights,
     toasts,
     position,
-    gap,
+    gap = DEFAULT_GAP,
     type
   } = React.useContext(ContextToaster)
 
@@ -239,7 +237,7 @@ export const ToastComponent = (
         if (!prev[toast.id]) {
           return {
             ...prev,
-            [toast.id]: toastRef.current.clientHeight
+            [toast.id]: toastRef?.current?.clientHeight
           }
         }
         return prev
@@ -271,10 +269,12 @@ export const ToastComponent = (
   const childIsJsx = React.isValidElement(children) && toast.type === 'default'
 
   const {
-    media: defaultMedia = DEFAULT_MEDIA[toast.type],
+    media: defaultMedia = DEFAULT_MEDIA[
+      toast.type as keyof typeof DEFAULT_MEDIA
+    ],
     ...defaultAtributes
   } = React.useMemo(() => {
-    return defaultToasts[toast.type] ?? {}
+    return defaultToasts?.[toast.type] ?? {}
   }, [defaultToasts, toast.type])
 
   const Media = React.useMemo(() => {
@@ -327,15 +327,15 @@ export const ToastComponent = (
             position: 'absolute',
             overflow: 'hidden',
             '--toast-height': height ? height + 'px' : 'auto',
-            top: position.includes('top') ? offsetTopBottom : undefined,
-            bottom: position.includes('bottom') ? offsetTopBottom : undefined,
-            ...defaultStyles.toast,
+            top: position?.includes('top') ? offsetTopBottom : undefined,
+            bottom: position?.includes('bottom') ? offsetTopBottom : undefined,
+            ...defaultStyles?.toast,
             ...defaultAtributes.style,
             ...toast.style
           } as React.CSSProperties
         }
         className={cn(
-          defaultClassNames.toast,
+          defaultClassNames?.toast,
           defaultAtributes.className,
           toast.className
         )}
@@ -362,7 +362,7 @@ export const ToastComponent = (
                 }}
                 data-anni-media=""
               >
-                {Media && Media}
+                {Media}
               </div>
             )}
 
