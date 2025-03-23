@@ -17,6 +17,7 @@ export interface ToastDetails {
   actionsProps?: Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>
 
   dismissButton?: boolean
+  dismissChild?: string
 }
 
 type ToastDefault = ToastDetails & { type: 'default' }
@@ -118,7 +119,7 @@ export const ToastInstance = new ToastState()
 // bind this to the toast function
 const toastFn = (
   child: ToastDetails['child'],
-  payload?: Omit<ToastDefault, 'id' | 'child'>
+  payload?: Omit<ToastDefault, 'id' | 'child' | 'type'>
 ) => {
   return ToastInstance.createToast({ child, type: 'default', ...payload })
 }
