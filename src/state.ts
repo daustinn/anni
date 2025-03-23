@@ -10,14 +10,13 @@ export interface ToastDetails {
   unstyled?: boolean
 
   child?: ((_: { dismiss: () => void }) => ToastChild) | ToastChild
-  icon?: React.ReactNode
+  media?: React.ReactNode
   action?: () => void
   actionChild?: string
   actionAltText?: string
   actionsProps?: Omit<React.ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'>
 
-  closeButton?: boolean
-  variant?: 'gentle' | 'filled'
+  dismissButton?: boolean
 }
 
 type ToastDefault = ToastDetails & { type: 'default' }
@@ -47,7 +46,9 @@ export type ToastStateT = {
 }
 
 class ToastState {
-  private readonly state: { toasts: Toast[] } = { toasts: [] }
+  private readonly state: { toasts: Toast[] } = {
+    toasts: []
+  }
   private listeners: Listener[] = []
 
   get toasts() {
@@ -75,7 +76,6 @@ class ToastState {
   }
 
   subscribe = (listener: Listener) => {
-    console.log(listener)
     this.listeners.push(listener)
     return () => {
       this.listeners = this.listeners.filter((l) => l !== listener)
