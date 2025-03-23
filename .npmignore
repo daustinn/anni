@@ -6,4 +6,5 @@ pnpm-lock.yaml
 bun.lockb
 .git/
 .npmignore
-
+eslint.config.js
+.prettierrc.json
