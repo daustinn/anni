@@ -2,7 +2,6 @@
 
 # dependencies
 /node_modules
-/website
 
 /.pnp
 .pnp.*
@@ -47,3 +46,6 @@ next-env.d.ts
 /package/dist
 /package/node_modules
 
+
+# turbo
+.turbo
