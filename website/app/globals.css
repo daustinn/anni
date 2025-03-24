@@ -1,0 +1,46 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-canela: 'Canela', 'sans-serif';
+  --color-brown-50: #f5f3eb;
+  --color-brown-100: #e7e1d5;
+  --color-brown-200: #cfc3ab;
+  --color-brown-300: #b7a580;
+  --color-brown-400: #9f8655;
+  --color-brown-500: #87672b;
+  --color-brown-600: #6c521f;
+  --color-brown-700: #523e17;
+  --color-brown-800: #382a0f;
+  --color-brown-900: #1f1708;
+  --color-brown-950: #120d05;
+
+  --color-oasis-50: #fff9eb;
+  --color-oasis-100: #fff0cc;
+  --color-oasis-200: #ffdc88;
+  --color-oasis-300: #ffc44a;
+  --color-oasis-400: #ffac20;
+  --color-oasis-500: #f98807;
+  --color-oasis-600: #dd6202;
+  --color-oasis-700: #b74206;
+  --color-oasis-800: #94320c;
+  --color-oasis-900: #7a2a0d;
+  --color-oasis-950: #461402;
+}
+
+button,
+a {
+  @apply cursor-pointer focus:outline-8 focus-visible:outline-8 active:outline-8 transition-all outline-stone-500/10;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hidden-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
