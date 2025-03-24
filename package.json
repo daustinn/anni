@@ -14,7 +14,7 @@
     "type-check": "tsc --noEmit",
     "dev:website": "turbo run dev --filter=website",
     "build:anni": "tsc && esbuild dist/**/*.js --minify --outdir=dist --allow-overwrite && esbuild src/styles.css --minify --outfile=dist/styles.css",
-    "deploy": "pnpm -w run build:anni && pnpm turbo run build --filter=website"
+    "deploy": "pnpm -w run build:anni && pnpm turbo run build --filter=website && pnpm --filter=website start"
   },
   "files": [
     "dist",
