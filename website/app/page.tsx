@@ -25,7 +25,7 @@ export default function Home() {
       <footer className="font-sans max-w-2xl mx-auto w-full space-y-2 px-4 pb-10">
         <p>
           Build by{' '}
-          <Link href="/" className="font-semibold underline">
+          <Link href="https://daustinn.com" className="font-semibold underline">
             Daustinn
           </Link>
         </p>
