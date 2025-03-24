@@ -44,14 +44,15 @@
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "dependencies": {
-    "@radix-ui/react-toast": "^1.2.4",
-    "bunchee": "^6.5.0"
+    "@radix-ui/react-toast": "^1.2.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.23.0",
     "@swc/core": "^1.11.12",
     "@types/react": "^17.0.3",
     "@types/react-dom": "^17.0.3",
+    "bunchee": "^6.5.0",
+    "esbuild": "^0.25.1",
     "eslint": "^9.23.0",
     "eslint-plugin-react": "^7.37.4",
     "globals": "^16.0.0",
