@@ -88,6 +88,11 @@ export const Toaster = (props: ToasterProps) => {
     swipeThreshold = 20
   } = props
   const [toasts, setToasts] = React.useState<Toast[]>(ToastInstance.toasts)
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const [heights, setHeights] = React.useState<{
     [id: string]: number
@@ -118,6 +123,7 @@ export const Toaster = (props: ToasterProps) => {
     }[position]
   }, [position])
 
+  if (!mounted) return null
   return (
     <ContextToaster.Provider
       value={{
@@ -151,7 +157,6 @@ export const Toaster = (props: ToasterProps) => {
         duration={defaultTimeDuration}
       >
         <div
-          suppressHydrationWarning
           style={{
             ...defaultStyles.toaster,
             padding: offset + 'px',
@@ -228,7 +233,6 @@ export const ToastComponent = (
 
   const duration = toast.duration ?? defaultTimeDuration
   const toastRef = React.useRef<HTMLDivElement>(null)
-  const [mounted, setMounted] = React.useState(false)
   const hiddenActionCloseRef = React.useRef<HTMLButtonElement>(null)
 
   React.useEffect(() => {
@@ -247,12 +251,6 @@ export const ToastComponent = (
 
   const hasActions =
     !!toast.action || toast.dismissButton || defaultDismissButton
-
-  React.useEffect(() => {
-    if (toastRef.current) {
-      setMounted(true)
-    }
-  }, [toastRef.current])
 
   const handleClose = () => {
     setHeights((prev) => ({
@@ -307,8 +305,6 @@ export const ToastComponent = (
   React.useEffect(() => {
     if (!isVisible) destroy(toast.id)
   }, [isVisible])
-
-  if (!mounted) return null
 
   if (!isVisible) return null
 
@@ -446,7 +442,6 @@ export const ImageMedia = React.forwardRef<
       width={size}
       height={size}
       referrerPolicy="no-referrer"
-      loading="lazy"
       alt="Icon"
     />
   )
