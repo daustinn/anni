@@ -48,10 +48,13 @@ export default function Highlight({
     | 'curl'
 }) {
   const [coping, setCoping] = React.useState(false)
+
   const handleCopy = () => {
-    navigator.clipboard.writeText(copyValue ?? code ?? '')
-    setCoping(true)
-    setTimeout(() => setCoping(false), 2000)
+    if (typeof window !== 'undefined') {
+      navigator.clipboard.writeText(copyValue ?? code ?? '')
+      setCoping(true)
+      setTimeout(() => setCoping(false), 2000)
+    }
   }
   return (
     <div
