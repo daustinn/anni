@@ -1,12 +1,7 @@
 import type { Metadata } from 'next'
-import { Geist } from 'next/font/google'
 import './globals.css'
 import { UiProviders } from './providers'
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin']
-})
+import { GeistSans } from 'geist/font/sans'
 
 export const metadata: Metadata = {
   title: 'Anni - Simple and easy-to-use notification system for React.',
@@ -26,10 +21,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <UiProviders>
         <body
-          className={`${geistSans.variable} antialiased bg-oasis-50 grow w-full text-brown-700 flex gap-5 flex-col`}
+          suppressHydrationWarning
+          className={`${GeistSans.className} antialiased bg-oasis-50 grow w-full text-brown-700 flex gap-5 flex-col`}
         >
           {children}
         </body>
