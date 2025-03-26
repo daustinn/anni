@@ -1,9 +1,12 @@
 node_modules/
 website/
+/website
+
 src/
 tsconfig.json
 pnpm-lock.yaml
 bun.lockb
+pnpm-workspace.yaml
 .git/
 .npmignore
 eslint.config.js
