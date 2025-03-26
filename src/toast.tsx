@@ -151,6 +151,7 @@ export const Toaster = (props: ToasterProps) => {
         duration={defaultTimeDuration}
       >
         <div
+          suppressHydrationWarning
           style={{
             ...defaultStyles.toaster,
             padding: offset + 'px',
@@ -227,6 +228,7 @@ export const ToastComponent = (
 
   const duration = toast.duration ?? defaultTimeDuration
   const toastRef = React.useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = React.useState(false)
   const hiddenActionCloseRef = React.useRef<HTMLButtonElement>(null)
 
   React.useEffect(() => {
@@ -245,6 +247,12 @@ export const ToastComponent = (
 
   const hasActions =
     !!toast.action || toast.dismissButton || defaultDismissButton
+
+  React.useEffect(() => {
+    if (toastRef.current) {
+      setMounted(true)
+    }
+  }, [toastRef.current])
 
   const handleClose = () => {
     setHeights((prev) => ({
@@ -299,6 +307,8 @@ export const ToastComponent = (
   React.useEffect(() => {
     if (!isVisible) destroy(toast.id)
   }, [isVisible])
+
+  if (!mounted) return null
 
   if (!isVisible) return null
 
