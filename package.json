@@ -1,6 +1,6 @@
 {
   "name": "anni",
-  "version": "1.1.28-fixed-2",
+  "version": "1.1.29",
   "description": "Simple, beautiful, and easy-to-use notification system",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
