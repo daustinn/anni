@@ -68,8 +68,6 @@ const ContextToaster = React.createContext<ContextToasterT>(
 )
 
 export const Toaster = (props: ToasterProps) => {
-  if (typeof window === 'undefined') return null
-
   const {
     unstyled = false,
     defaultActionAltText = 'esc',
@@ -605,13 +603,20 @@ const cn = (...classes: (string | undefined | false)[]) =>
 
 type Theme = 'dark' | 'light'
 
-export const getPreferredTheme = (): Theme =>
-  window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+export const getPreferredTheme = (): Theme => {
+  return typeof window === 'undefined'
+    ? 'light'
+    : window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? 'dark'
+    : 'light'
+}
 
 const usePreferredTheme = (): Theme => {
   const [theme, setTheme] = React.useState<Theme>(getPreferredTheme)
 
   React.useEffect(() => {
+    if (typeof window === 'undefined') return
+
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
     const listener = (event: MediaQueryListEvent) =>
       setTheme(event.matches ? 'dark' : 'light')
